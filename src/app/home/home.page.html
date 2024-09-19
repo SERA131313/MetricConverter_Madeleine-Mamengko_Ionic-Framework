@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Metrics Converter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Teks tambahan di bawah Metric Converter -->
+  <p style="text-align: center; color: grey; margin-top: 10px;">
+    By: Madeleine Aiken Sharapova Mamengko
+  </p>
+
+  <!-- Card konversi satuan -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Konversi Satuan</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Input</ion-label>
+        <ion-input [(ngModel)]="inputValue" type="number" placeholder="Masukkan nilai"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>From</ion-label>
+        <ion-select [(ngModel)]="fromUnit">
+          <ion-select-option value="kilometers">Kilometers</ion-select-option>
+          <ion-select-option value="meters">Meters</ion-select-option>
+          <ion-select-option value="grams">Grams</ion-select-option>
+          <ion-select-option value="milligrams">Milligrams</ion-select-option>
+          <ion-select-option value="celsius">Celsius</ion-select-option>
+          <ion-select-option value="fahrenheit">Fahrenheit</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>To</ion-label>
+        <ion-select [(ngModel)]="toUnit">
+          <ion-select-option value="kilometers">Kilometers</ion-select-option>
+          <ion-select-option value="meters">Meters</ion-select-option>
+          <ion-select-option value="grams">Grams</ion-select-option>
+          <ion-select-option value="milligrams">Milligrams</ion-select-option>
+          <ion-select-option value="celsius">Celsius</ion-select-option>
+          <ion-select-option value="fahrenheit">Fahrenheit</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-button expand="full" (click)="convert()">Convert</ion-button>
+
+      <ion-item *ngIf="result !== null">
+        <ion-label>Result: {{ result }}</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
